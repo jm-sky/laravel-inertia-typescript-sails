@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "jsx": "preserve",
+    "moduleResolution": "node",
+    "strict": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "skipLibCheck": true,
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
+    "types": ["@types/node", "vite/client"],
+    "noEmit": true,
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["resources/js/*"]
+    },
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "./public/build/assets"
+  },
+  "typeRoots": ["node_modules/@types", "resources/js/Types"],
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ],
+  "include": [
+    "resources/js/**/*.ts",
+    "resources/js/**/*.d.ts",
+    "resources/js/**/*.vue"
+  ],
+  "exclude": ["node_modules", "public"]
+}
