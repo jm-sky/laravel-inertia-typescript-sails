@@ -15,3 +15,4 @@ export interface SharedProps {
 declare module '@inertiajs/core/types/types' {
   interface PageProps extends SharedProps, InertiaPageProps {}
 }
+

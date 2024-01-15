@@ -7,12 +7,12 @@ import InputError from '@/Components/InputError.vue';
 import InputLabel from '@/Components/InputLabel.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
+import { route } from '@/Helpers/route';
 
 defineProps<{
   canResetPassword: boolean
-  status: string
+  status?: string
 }>();
-
 
 const form = useForm({
   email: '',
@@ -63,7 +63,7 @@ const submit = () => {
           <span class="ms-2 text-sm text-gray-600 dark:text-gray-400">Remember me</span>
         </label>
         <Link v-if="canResetPassword" :href="route('password.request')"
-          class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800">
+          class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 dark:focus:ring-offset-gray-800">
         Forgot your password?
         </Link>
       </div>
@@ -78,7 +78,7 @@ const submit = () => {
     <div class="mt-4 text-center text-sm text-gray-400">
       Don't have account?
       <Link :href="route('register')"
-        class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800"
+        class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 dark:focus:ring-offset-gray-800"
       >Register</Link>
     </div>
   </AuthenticationCard>
