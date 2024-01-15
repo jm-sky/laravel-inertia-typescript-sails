@@ -9,13 +9,13 @@ import { ZiggyVue } from "../../vendor/tightenco/ziggy/dist/vue.m";
 const appName = import.meta.env.VITE_APP_NAME || "Laravel";
 
 createInertiaApp({
-  title: (title) => `${title} - ${appName}`,
+  title: (title) => title ? `${title} - ${appName}` : appName,
   resolve: async (name) => await resolvePageComponent(`./Pages/${name}.vue`, import.meta.glob<DefineComponent>('./Pages/**/*.vue')),
-  setup({ el, App, props, plugin }) {
-    return createApp({ render: () => h(App, props) })
+  setup ({ el, App, props, plugin }) {
+    createApp({ render: () => h(App, props) })
       .use(plugin)
       .use(ZiggyVue)
-      .mount(el);
+      .mount(el)
   },
   progress: {
     color: "#4B5563",
