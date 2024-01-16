@@ -8,6 +8,7 @@ const props = withDefaults(
     icon: TFontAwesomeIcon
     loading?: boolean
     loadingIcon?: string
+    rotate?: boolean
     fw?: boolean
     ml?: boolean
     mr?: boolean
@@ -16,6 +17,7 @@ const props = withDefaults(
     type: 'regular',
     loading: false,
     loadingIcon: 'sync',
+    rotate: false,
     fw: false,
     ml: false,
     mr: false,
@@ -43,5 +45,5 @@ const typeComp = computed(() => {
 </script>
 
 <template>
-  <i :class="[typeComp, iconComp, fixedWidthComp, { 'mr-1.5': mr }, { 'ml-1.5': ml }]" />
+  <i :class="[typeComp, iconComp, fixedWidthComp, { 'mr-1.5': mr }, { 'ml-1.5': ml }, { 'rotate-180': rotate }]" class="transition-transform" />
 </template>

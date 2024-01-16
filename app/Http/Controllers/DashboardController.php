@@ -14,6 +14,7 @@ class DashboardController extends Controller
 
         return Inertia::render('Dashboard', [
             'feeds' => $feeds,
+            'u' => $feeds->first()->user,
         ]);
     }
 
